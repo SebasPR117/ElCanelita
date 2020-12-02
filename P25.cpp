@@ -4,7 +4,11 @@ using namespace std;
 
 int main()
 {
-   int a,b=0,n=1,c,d;
+   int a;
+   int b=0;
+   int n=1;
+   int c;
+   int d;
    float e=0.0;
 
    cout<<"Este programa determina la mediana de los datos ingresados por el usuario"<<endl;
@@ -12,45 +16,43 @@ int main()
    cin>>a;
 
    float arreglo[a];
-   float *Parreglo=&arreglo[0];
 
    while (b<a)
    {
        cout<<"Ingrese el "<<n<<" numero"<<endl;
-       cin>>Parreglo[b];
+       cin>>arreglo[b];
        b++;
        n++;
    }
-   cout<<endl;
    
    for (int i=0; i<a; i++)
    {
        for (int j=i+1; j<a; j++)
        {
-           if (Parreglo[i] > Parreglo[j])
+           if (arreglo[i] > arreglo[j])
            {
-               c=Parreglo[i];
-               Parreglo[i]=Parreglo[j];
-               Parreglo[j]=c;
+               c=arreglo[i];
+               arreglo[i]=arreglo[j];
+               arreglo[j]=c;
+               
            }
        }
    }
 
    for (int r = 0; r < a; r++)
    {
-       cout<<Parreglo[r]<<endl;
+       cout<<arreglo[r]<<endl;
    }
    
    d=a/2;
    if (a%2==0)
    {
-       e=(Parreglo[d-1]+Parreglo[d])/2.0;
+       e=(arreglo[d-1]+arreglo[d])/2.0;
    }
    else
    {
-       e=Parreglo[d];
+       e=arreglo[d];
    }
-   cout<<endl;
 
    cout<<"La mediana es: "<<e<<endl;
    
